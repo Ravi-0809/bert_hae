@@ -2,3 +2,4 @@
 outputs/
 cache/
 __pycache__/
+nohup.out

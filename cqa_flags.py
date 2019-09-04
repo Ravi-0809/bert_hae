@@ -72,12 +72,12 @@ flags.DEFINE_bool("do_train", True, "Whether to run training.")
 
 flags.DEFINE_bool("do_predict", True, "Whether to run eval on the dev set.")
 
-flags.DEFINE_integer("train_batch_size", 6, "Total batch size for training.")
+flags.DEFINE_integer("train_batch_size", 12, "Total batch size for training.")
 
-flags.DEFINE_integer("predict_batch_size", 6,
+flags.DEFINE_integer("predict_batch_size", 12,
                      "Total batch size for predictions.")
 
-flags.DEFINE_float("learning_rate", 3e-4, "The initial learning rate for Adam.")
+flags.DEFINE_float("learning_rate", 3e-5, "The initial learning rate for Adam.")
 
 flags.DEFINE_float("num_train_epochs", 2.0,
                    "Total number of training epochs to perform.")
@@ -87,13 +87,13 @@ flags.DEFINE_float(
     "Proportion of training to perform linear learning rate warmup for. "
     "E.g., 0.1 = 10% of training.")
 
-flags.DEFINE_integer("save_checkpoints_steps", 1000,
+flags.DEFINE_integer("save_checkpoints_steps", 10000,
                      "How often to save the model checkpoint.")
 
-flags.DEFINE_integer("evaluation_steps", 5,
+flags.DEFINE_integer("evaluation_steps", 1000,
                      "How often to do evaluation.")
 
-flags.DEFINE_integer("evaluate_after", 0,
+flags.DEFINE_integer("evaluate_after", 18000,
                      "we do evaluation after centain steps.")
 
 flags.DEFINE_integer("iterations_per_loop", 1000,
@@ -156,7 +156,7 @@ flags.DEFINE_bool(
     "This referes to HAE in our implementation. This flag surpasses the only_history_answer flag.")
 
 flags.DEFINE_bool(
-    "load_small_portion", True,
+    "load_small_portion",False,
     "during develping, we only want to load a very small portion of "
     "the data to see if the code works.")
 
@@ -174,6 +174,6 @@ flags.DEFINE_integer(
 
 
 flags.DEFINE_integer(
-    "train_steps", 20,
+    "train_steps", 24000,
     "how many train steps")
 
