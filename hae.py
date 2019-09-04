@@ -268,7 +268,8 @@ with tf.Session() as sess:
                                            input_mask: fd['input_mask'], segment_ids: fd['segment_ids'], 
                                            start_positions: fd['start_positions'], end_positions: fd['end_positions'], 
                                            history_answer_marker: fd['history_answer_marker'], training: True})
-            except:
+            except Exception as e:
+                print(e)
                 print('features length: ', len(selected_example_features))
 
             train_summary_writer.add_summary(train_summary, step)
