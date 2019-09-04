@@ -53,7 +53,7 @@ flags.DEFINE_bool(
     "models and False for cased models.")
 
 flags.DEFINE_integer(
-    "max_seq_length", 384,
+    "max_seq_length", 512,
     "The maximum total input sequence length after WordPiece tokenization. "
     "Sequences longer than this will be truncated, and sequences shorter "
     "than this will be padded.")
@@ -77,7 +77,7 @@ flags.DEFINE_integer("train_batch_size", 6, "Total batch size for training.")
 flags.DEFINE_integer("predict_batch_size", 6,
                      "Total batch size for predictions.")
 
-flags.DEFINE_float("learning_rate", 3e-5, "The initial learning rate for Adam.")
+flags.DEFINE_float("learning_rate", 3e-4, "The initial learning rate for Adam.")
 
 flags.DEFINE_float("num_train_epochs", 2.0,
                    "Total number of training epochs to perform.")
@@ -141,7 +141,7 @@ flags.DEFINE_bool(
     "A number of warnings are expected for a normal SQuAD evaluation.")
 
 flags.DEFINE_integer(
-    "history", 6,
+    "history", 5,
     "Number of conversation history to use. "
 )
 
