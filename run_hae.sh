@@ -1,0 +1,14 @@
+python hae.py \
+    --output_dir=outputs/  \
+    --history=5 \
+    --num_train_epochs=3.0 \
+    --train_steps=24000 \
+    --max_considered_history_turns=11 \
+    --learning_rate=3e-04 \
+    --warmup_proportion=0.1 \
+    --evaluation_steps=1000 \
+    --evaluate_after=18000 \
+    --load_small_portion=False \
+    --train_batch_size=12 \
+    --max_answer_length=40 \
+    --max_seq_length=512
