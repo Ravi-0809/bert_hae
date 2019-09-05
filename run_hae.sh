@@ -9,6 +9,6 @@ python hae.py \
     --evaluation_steps=1000 \
     --evaluate_after=18000 \
     --load_small_portion=False \
-    --train_batch_size=12 \
+    --train_batch_size=4 \
     --max_answer_length=40 \
     --max_seq_length=512
