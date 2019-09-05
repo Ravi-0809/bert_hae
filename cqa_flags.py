@@ -19,6 +19,8 @@ FLAGS = flags.FLAGS
 MODEL_DIR = '../data/bert_base_uncased/'
 QuAC_DIR = '../data/QuAC/'
 
+CHKPT_PATH = 'outputs/model_18000.ckpt'
+
 # for running in jupyter env
 flags.DEFINE_string('f', '', 'kernel')
 
@@ -42,8 +44,12 @@ flags.DEFINE_string(
     "quac_predict_file", QuAC_DIR+"val_v0.2.json",
     "QuAC json for predictions.")
 
+# flags.DEFINE_string(
+#     "init_checkpoint", MODEL_DIR+"bert_model.ckpt",
+#     "Initial checkpoint (usually from a pre-trained BERT model).")
+
 flags.DEFINE_string(
-    "init_checkpoint", MODEL_DIR+"bert_model.ckpt",
+    "init_checkpoint", CHKPT_PATH,
     "Initial checkpoint (usually from a pre-trained BERT model).")
 
 
@@ -90,10 +96,10 @@ flags.DEFINE_float(
 flags.DEFINE_integer("save_checkpoints_steps", 10000,
                      "How often to save the model checkpoint.")
 
-flags.DEFINE_integer("evaluation_steps", 1000,
+flags.DEFINE_integer("evaluation_steps", 5000,
                      "How often to do evaluation.")
 
-flags.DEFINE_integer("evaluate_after", 18000,
+flags.DEFINE_integer("evaluate_after", 0,
                      "we do evaluation after centain steps.")
 
 flags.DEFINE_integer("iterations_per_loop", 1000,
